@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Home Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link rel="stylesheet" href="static\turnover_style.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center">
+
+        <a class="navbar-brand mr-1" href="#">Dukes LLC</a>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="dataTools">Data Tools</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="deepDive">Deep Dive</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/resources">Resources</a>
+            </li>
+        </ul>
+
+    </nav>
+
+    <div class="container-fluid" id="index-container">
+        <div class="row">
+            <div class="col-md-12 jumbotron text-center">
+                <h2 style="color:white">Turnover Analysis Dashboard</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class=container>
+
+        <div class="row page_header">
+            <h1 id="pageTitle">Welcome to the Dashboard</h1>
+        </div>
+
+        <div class="row">
+            <div class="col-md-5" id="index_text_area">
+                <p>This dashboard contain graphs and tools that will help managers get a better understanding of employee turnover in Duke LLC and design data-driven strategies to retain our critical talent. All data is updated in real time.
+                </p>
+                <p>Overall, the company is experiencing 16% turnover, as seen in the chart to the right. The chart below displays each employment factor's importance in predicting whether an employee will leave or stay.</p>
+                <p>Subsequent pages analyze the relation of those employment factors to turnover in greater depth.</p>
+            </div>
+            <div class="col-md-5 offset-1" id="overall_chart">
+                <img src="static/overallTurnover.png" alt="Turnover Bar Chart">
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid" <div class="row margin-top-50">
+        <div class="col-md-12" id="featureImportance">
+            <img src="static/featureImportance.png" alt="Horizontal Bar Chart-Feature Importance">
+        </div>
+    </div>
+    </div>
+
+    <footer class="footer">
+
+    </footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
+    <script src="static/tool_logic.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js " integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo " crossorigin="anonymous "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js " integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1 " crossorigin="anonymous "></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js " integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM " crossorigin="anonymous "></script>
+</body>
+
+</html>

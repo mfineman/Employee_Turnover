@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>dataTools</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link rel="stylesheet" href="static\turnover_style.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center">
+
+        <a class="navbar-brand mr-1" href="#">Dukes LLC</a>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="dataTools">Data Tools</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="deepDive">Deep Dive</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="/resources">Resources</a>
+            </li>
+        </ul>
+
+    </nav>
+
+    <div class="container">
+
+        <div class="container">
+            <div class="row page_header">
+                <h1 id="pageTitle">Data Analysis Tools</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="text_area">
+                <p>These tools allow you to explore the relationship between employment factors and turnover and estimate savings from decreased turnover.
+                </p>
+
+                <h4>Turnover by Employment Factor</h4>
+                <a id=factor_head></a>
+                <p>Select a factor from the dropdown menu to see turnover data broken down by the factor's categories.</p>
+            </div>
+        </div>
+
+        <div class="row margin-top-30">
+            <div class="col-md-3">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Employment Factor Search</div>
+                    <div class="panel-body">
+                        <form>
+                            <div class="form-group">
+                                <select id="selectFactor">
+                                            <option>Select</option>                        
+                                        </select>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-5">
+                <div id="table-area" class="">
+                    <table id="table" class="table">
+                        <thead>
+                            <tr id="toolHead">
+                                <th class="thead-inverse">Factor</th>
+                                <th class="thead-inverse">Category</th>
+                                <th class="thead-inverse">Employee Count</th>
+                                <th class="thead-imverse">% Retained</th>
+                                <th class="thead-inverse">% Turnover</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-4" id="factorChart">
+            </div>
+        </div>
+
+        <div class="row" id=tools>
+            <div class="col-md-5" id="estimator">
+                <h4 id="title">Turnover Cost Estimator</h4> <br>
+                <p>Measurable costs of turnover include job advertising or recruiters, time spent processing applications, interviewing, onboarding and training the new employee.
+                </p>
+                <p><strong>Estimated Replacement Cost Per Employee:</strong></p>
+
+                <p>Job Level 1: $4,000 &emsp; &emsp; &emsp; Job Level 2: $6,000</p>
+                <p>Job Level 3: $8,000 &emsp; &emsp; &emsp; Job Level 4: $18,000</p>
+                <p>&emsp; &emsp; &emsp; &emsp; Job Level 5: $40,000</p>
+
+                <div id="currentRate"></div>
+                <div id="currentCost"></div>
+                <br>
+                <p>
+                    Use the calculator to estimate savings or additional expense as turnover changes.
+                </p>
+
+                <div class="panel-body">
+
+                    <label for="new_rate">New Turnover Rate</label>&emsp; &emsp;
+                    <label for="cost_diff">Savings/(Added Cost)</label>
+                    <input type="float" id="new_rate">&emsp; &emsp; &emsp;
+                    <ouput type="integer" id="cost_diff">
+                        <br><br>
+
+                </div>
+            </div>
+
+            <div class="col-md-5 offset-1" id="risk-calculator">
+                <div class="panel panel-default">
+                    <h4 id="title">Turnover Risk Predictor</h4> <br>
+                    <div class="panel-body">
+
+                        <div id="instructions">
+                            <p>To predict the probability that an employee will leave the company, enter an employee number between 1 and 1728.</p>
+                            <div id="disclaimer" <p>Note: Predictions are calculated based on many factors that are subject to constant change, and predictions are liable to error. No employment decisions should be made solely on the basis of these predictions.</p>
+                            </div>
+                        </div>
+
+
+                        <label for="emp_num">Employee Number</label>&emsp; &emsp; &emsp; &emsp;
+                        <label for="prediction">Predicted Risk (%)</label><br>
+                        <input type="integer" id="emp_num">&emsp; &emsp;
+                        <ouput type="float" id="prediction">
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
+    <script src="static/tool_logic.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js " integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo " crossorigin="anonymous "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js " integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1 " crossorigin="anonymous "></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js "></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js " integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM " crossorigin="anonymous "></script>
+</body>
+
+</html>
