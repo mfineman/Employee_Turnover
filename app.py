@@ -1,6 +1,6 @@
 import pandas as pd
 import os
-from config import password
+# from config import password
 import psycopg2
 import sqlalchemy
 import json 
@@ -8,7 +8,7 @@ import flask
 import numpy as np
 import LogisticRegression
 import scrape
-
+password = 'Parvin123!!'
 from sqlalchemy import create_engine
 
 from flask import Flask, render_template, redirect, jsonify
