@@ -1,11 +1,11 @@
 import pandas as pd
 import numpy as np
-from config import password
+# from config import password
 from bs4 import BeautifulSoup as bs
 from splinter import Browser
 from sqlalchemy import create_engine
 import psycopg2
-
+password='Parvin123!!'
 
 # import os
 # from selenium import webdriver
