@@ -10,6 +10,7 @@ password='Parvin123!!'
 from selenium import webdriver
 import os
 
+
 url = 'https://www.bls.gov/news.release/archives/jolts_03172020.htm' 
 
 
@@ -19,7 +20,8 @@ def scrape_bls():
 
     bls_df = bls_df.replace(np.nan, '', regex=True)
 
-    Engine = create_engine(f"postgresql://postgres:{password}@localhost:5432/Employee_Turnover");
+    Engine = psycopg2.connect(DATABASE_URL, sslmode='require')
+    # Engine = create_engine(f"postgresql://postgres:{password}@localhost:5432/Employee_Turnover");
     connection = Engine.connect();
     postgreSQLTable = "blsdata"
 
