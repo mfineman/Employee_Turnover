@@ -13,7 +13,6 @@ from sqlalchemy import create_engine
 
 DATABASE_URL = os.environ['DATABASE_URL']
 
-# conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 from flask import Flask, render_template, redirect, jsonify
 
 app=Flask(__name__)
@@ -22,11 +21,13 @@ app=Flask(__name__)
 scrape.scrape_bls()
 
 # Draw employee turnover data and national statistics from database
-# Engine = create_engine(f"postgresql://postgres:{password}@localhost:5432/Employee_Turnover")
-Engine = psycopg2.connect(DATABASE_URL, sslmode='require')
-Connection = Engine.connect()
+connection = psycopg2.connect(DATABASE_URL, sslmode='require')
+postgreSQLTable = "blsdata"
 
-initial_df=pd.read_sql("select * from turnover_data",Connection)
+# Engine = psycopg2.connect(DATABASE_URL, sslmode='require')
+# connection = Engine.connect()
+
+initial_df=pd.read_sql("select * from turnover_data",connection)
 # alternative: read data from csv file:
 # initial_df=pd.read_csv("Resources/turnoverData_full.csv")
 
