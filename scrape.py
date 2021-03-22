@@ -7,17 +7,13 @@ from sqlalchemy import create_engine
 import psycopg2
 password='Parvin123!!'
 
-# import os
-# from selenium import webdriver
-# from selenium.webdriver.chrome.options import Options
+from selenium import webdriver
+import os
 
 url = 'https://www.bls.gov/news.release/archives/jolts_03172020.htm' 
 
 
 def scrape_bls():
-    executable_path = {'executable_path': 'chromedriver.exe'}
-    browser = Browser('chrome', **executable_path, headless=True)
-
     bls_table = pd.read_html(url)
     bls_df=bls_table[15]
 
