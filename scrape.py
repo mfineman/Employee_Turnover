@@ -10,6 +10,7 @@ password='Parvin123!!'
 from selenium import webdriver
 import os
 
+DATABASE_URL = os.environ['DATABASE_URL']
 
 url = 'https://www.bls.gov/news.release/archives/jolts_03172020.htm' 
 
