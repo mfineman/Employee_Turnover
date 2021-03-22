@@ -21,9 +21,9 @@ def scrape_bls():
 
     bls_df = bls_df.replace(np.nan, '', regex=True)
 
-    Engine = psycopg2.connect(DATABASE_URL, sslmode='require')
+    connection = psycopg2.connect(DATABASE_URL, sslmode='require')
     # Engine = create_engine(f"postgresql://postgres:{password}@localhost:5432/Employee_Turnover");
-    connection = Engine.connect();
+    # connection = Engine.connect();
     postgreSQLTable = "blsdata"
 
     try:
