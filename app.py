@@ -31,8 +31,8 @@ initial_df=pd.read_sql("select * from turnover_data",connection)
 # alternative: read data from csv file:
 # initial_df=pd.read_csv("Resources/turnoverData_full.csv")
 
-bls_df=pd.read_sql("select * from blsdata", Connection)
-Connection.close()
+bls_df=pd.read_sql("select * from blsdata", connection)
+connection.close()
 
 bls_df.reset_index(drop=True, inplace=True)
 bls_df=bls_df.drop(bls_df.index[[35,36]])
