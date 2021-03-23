@@ -1,5 +1,9 @@
 # Analysis of Factors Affecting Workplace Turnover
 
+## Run the App
+
+I have deployed the app to heroku.  To run it, please visit https://turnoverdashboard.herokuapp.com/
+
 ## Purpose of Project
 
 Employee turnover is a major concern for many employers.  The costs associated with unwanted attrition in terms of replacement, training, and lost opportunities and institutional knowledge, among other consequences, can be staggering.  Business and HR leaders need in-depth analyses of the causes of turnover in order to create effective strategies to combat it.  
