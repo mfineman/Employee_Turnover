@@ -24,9 +24,6 @@ scrape.scrape_bls()
 connection = psycopg2.connect(DATABASE_URL, sslmode='require')
 postgreSQLTable = "blsdata"
 
-# Engine = psycopg2.connect(DATABASE_URL, sslmode='require')
-# connection = Engine.connect()
-
 initial_df=pd.read_sql("select * from turnover_data",connection)
 # alternative: read data from csv file:
 # initial_df=pd.read_csv("Resources/turnoverData_full.csv")
