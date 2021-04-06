@@ -8,7 +8,7 @@ import flask
 import numpy as np
 import LogisticRegression
 import scrape
-password = 'Parvin123!!'
+# password = 'Parvin123!!'
 from sqlalchemy import create_engine
 
 DATABASE_URL = os.environ['DATABASE_URL']
@@ -22,7 +22,7 @@ scrape.scrape_bls()
 
 # Draw employee turnover data and national statistics from database
 connection = psycopg2.connect(DATABASE_URL, sslmode='require')
-postgreSQLTable = "blsdata"
+# postgreSQLTable = "blsdata"
 
 initial_df=pd.read_sql("select * from turnover_data",connection)
 # alternative: read data from csv file:
